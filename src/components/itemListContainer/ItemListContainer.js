@@ -1,12 +1,14 @@
 import './ItemListContainer.css'
+//import Hooks from '../hooks/Hooks'
 
+import ItemCount from '../itemCount/ItemCount'
 const ItemListContainer = (props) => {
 
     return(
         
-        <p >
-            Este es el contenedor ItemListContainer {props.greeting}
-        </p>
+        <div>
+            <ItemCount stock="10"/>
+        </div>
         
     )
 
