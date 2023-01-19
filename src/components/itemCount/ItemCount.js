@@ -42,13 +42,15 @@ const ItemCount = (props) => {//Funcion constructora
 
     return(
         
-        <div className = "m-3 p-3">
+        <div>
            <div className ="d-flex flex-row justify-content-center">
-           <button className='btn btn-primary m-2' onClick={addOne}>+</button>
-           <p className= 'align-self-center my-2'>{count}</p>
-           <button className='btn btn-danger m-2' onClick={subOne}>-</button>
+                <button className='btn btn-primary m-1 p-3' onClick={addOne}>+</button>
+                <p className="m-4">{count}</p>
+                <button className='btn btn-danger m-1 p-3' onClick={subOne}>-</button>
            </div>
-           <button className='btn btn-secondary' onClick={onAdd}>On add</button>
+           <div className='d-flex justify-content-center m-2'>
+                <button className='btn btn-secondary ' onClick={onAdd}>On add</button>
+           </div>
         </div>
         
     )

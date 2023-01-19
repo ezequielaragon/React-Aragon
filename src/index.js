@@ -4,6 +4,7 @@ import './index.css';
 import NavBar from './components/navbar/NavBar.js'
 import ItemListContainer from './components/itemListContainer/ItemListContainer.js';
 import reportWebVitals from './reportWebVitals';
+import Body from './components/body/Body';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,7 +12,7 @@ root.render(
     <NavBar
     saludo="Hola"
     />
-    <ItemListContainer saludo="hola" />
+    <Body saludo="hola" />
   </React.StrictMode>
 );
 

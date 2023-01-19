@@ -1,13 +1,18 @@
 import './ItemListContainer.css'
-//import Hooks from '../hooks/Hooks'
 
-import ItemCount from '../itemCount/ItemCount'
+
+//Componentes 
+//import Hooks from '../hooks/Hooks'
+import ItemList from '../itemList/ItemList'
+
+
+
 const ItemListContainer = (props) => {
 
     return(
         
-        <div>
-            <ItemCount stock="10"/>
+        <div className='d-flex flex-wrap justify-content-center'>
+            <ItemList/> 
         </div>
         
     )
