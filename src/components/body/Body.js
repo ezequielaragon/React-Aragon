@@ -12,30 +12,10 @@ import "./Body.css"
 
 //-----Funcionalidad
 const Body = () => {
-
-
-    const [categoriaNombre, setCategoriaNombre] = useState("")
-
-    const cambiarCategoriaHogar = () => {
-        setCategoriaNombre("Hogar")
-    }
-
-    const cambiarCategoriaConstruccion = () => {
-        setCategoriaNombre("Construccion")
-    }
-
-    const cambiarCategoriaTodo = () => {
-        setCategoriaNombre("Todo")
-    }
-
-
     return(
         <div>
         <p>Componente Body </p>
-        <button onClick={cambiarCategoriaHogar}>Hogar</button>
-        <button onClick={cambiarCategoriaConstruccion}>Construccion</button>
-        <button onClick={cambiarCategoriaTodo}>Todo</button>
-        <ItemList categoria={categoriaNombre}/>
+        <ItemList/>
         </div>
 
     )

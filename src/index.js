@@ -11,6 +11,8 @@ import AboutUs from './components/aboutUs/AboutUs'
 
 import reportWebVitals from './reportWebVitals';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
+import ItemCategoryContainer from './components/itemCategoryContainer/ItemCategoryContainer';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -23,7 +25,7 @@ root.render(
         <Route exact path='/nosotros' element={<AboutUs/>} />
         <Route exact path='/productos' element={<Body/>} />
         <Route exact path='/producto/:productoId' element={<ItemDetailContainer/>} />
-        <Route exact path='/categoria/:categoriaId' element={<Body/>} />
+        <Route exact path='/categoria/:categoriaId' element={<ItemCategoryContainer/>} />
       </Routes>
 
       

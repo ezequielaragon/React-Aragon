@@ -23,6 +23,12 @@ function NavBar (props){
       <li className="nav-item m-3 p-2">
         <Link to="/nosotros" className="nav-link" href="#s">Nosotros<span className="sr-only"></span></Link>
       </li>
+      <li className="nav-item m-3 p-2">
+        <Link to="/categoria/jewelery" className="nav-link" href="#s">Joyeria<span className="sr-only"></span></Link>
+      </li>
+      <li className="nav-item m-3 p-2">
+        <Link to="/categoria/electronics" className="nav-link" href="#s">Electronics<span className="sr-only"></span></Link>
+      </li>
       <li className="nav-item m-3 p-3 ">
        <CartWidget cantidad="3"/>
       </li>

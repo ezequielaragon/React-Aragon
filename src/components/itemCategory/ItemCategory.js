@@ -4,9 +4,8 @@
 
 //Modulos
 import { useState, useEffect } from 'react'
-
 //Estilos
-import './ItemList.css'
+import './ItemCategory.css'
 //Componentes
 import Item from '../item/Item'
 //Core
@@ -14,15 +13,14 @@ import Item from '../item/Item'
 /*#############################################
                  Logica
 ###############################################*/
-const ItemList = () => {//Funcion constructora
+const ItemCategory = (props) => {//Funcion constructora
     const [productos, setProductos] = useState([])
 
-
     useEffect(()=>{
-    fetch('https://fakestoreapi.com/products')
+    fetch(`https://fakestoreapi.com/products/category/${props.categoria}`)
     .then(res=>res.json())
     .then(json=>setProductos(json.map(productos => <Item key={productos.id} id={"producto" + productos.id} data={productos}/>)))
-    },[])
+    },[productos, props.categoria])
 
     return(
         
@@ -35,4 +33,4 @@ const ItemList = () => {//Funcion constructora
 /*#############################################
                  Exportacion
 ###############################################*/
-export default ItemList
+export default ItemCategory
