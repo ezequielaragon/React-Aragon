@@ -3,9 +3,8 @@
 ###############################################*/
 
 //Modulos
-import { Link } from 'react-router-dom'
 //Estilos
-import './Item.css'
+import './ItemDetail.css'
 //Componentes
 import ItemCount from '../itemCount/ItemCount'
 //Core
@@ -13,15 +12,14 @@ import ItemCount from '../itemCount/ItemCount'
 /*#############################################
                  Logica
 ###############################################*/
-const Item = (props) => {//Funcion constructora
+const ItemDetail = (props) => {//Funcion constructora
 
-
-    const {title, category, description, price, id} = props.data
-
+    const {title, category, description, price} = props.data
 
     return(
         
-        <div className='card m-3 border p-3 rounded col-3'>
+    <div className='m-3'>
+                    <div className='card m-3 border p-3 rounded col-3'>
             <div className='flex'>
                 <div className=''>
                 <p>{category}</p>
@@ -30,11 +28,11 @@ const Item = (props) => {//Funcion constructora
                 <p>{price}</p>
                 </div>
             </div>
-            <Link to={`/producto/${id}`}>Ver Detalles</Link>
             <div>
              <ItemCount stock={10}/>
             </div>
         </div>
+    </div>
         
     )
 
@@ -43,4 +41,4 @@ const Item = (props) => {//Funcion constructora
 /*#############################################
                  Exportacion
 ###############################################*/
-export default Item
+export default ItemDetail

@@ -1,7 +1,7 @@
 //------Importacion
 
 //dependencias
-import { useState } from "react"
+import { useState,} from "react"
 
 //componentes
 import ItemList from "../itemList/ItemList"
@@ -12,6 +12,7 @@ import "./Body.css"
 
 //-----Funcionalidad
 const Body = () => {
+
 
     const [categoriaNombre, setCategoriaNombre] = useState("")
 
@@ -30,7 +31,7 @@ const Body = () => {
 
     return(
         <div>
-        <p>1. Componente Body </p>
+        <p>Componente Body </p>
         <button onClick={cambiarCategoriaHogar}>Hogar</button>
         <button onClick={cambiarCategoriaConstruccion}>Construccion</button>
         <button onClick={cambiarCategoriaTodo}>Todo</button>

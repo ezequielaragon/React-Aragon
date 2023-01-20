@@ -1,18 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import NavBar from './components/navbar/NavBar.js'
-import ItemListContainer from './components/itemListContainer/ItemListContainer.js';
-import reportWebVitals from './reportWebVitals';
-import Body from './components/body/Body';
+import {BrowserRouter, Routes , Route} from 'react-router-dom';
 
+import './index.css';
+
+import NavBar from './components/navbar/NavBar.js';
+import Body from './components/body/Body';
+import Home from './components/home/Home';
+import AboutUs from './components/aboutUs/AboutUs'
+
+import reportWebVitals from './reportWebVitals';
+import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <NavBar
-    saludo="Hola"
-    />
-    <Body saludo="hola" />
+
+    <BrowserRouter>
+
+      <NavBar/>
+      <Routes>
+        <Route  exact path='/' element={<Home/>} />
+        <Route exact path='/nosotros' element={<AboutUs/>} />
+        <Route exact path='/productos' element={<Body/>} />
+        <Route exact path='/producto/:productoId' element={<ItemDetailContainer/>} />
+        <Route exact path='/categoria/:categoriaId' element={<Body/>} />
+      </Routes>
+
+      
+
+    </BrowserRouter>
+
+
   </React.StrictMode>
 );
 
