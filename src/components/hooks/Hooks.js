@@ -5,7 +5,7 @@
 //Modulos
 import { useEffect, useState } from 'react'
 //Estilos
-import './Hooks.css'
+
 //Componentes
 //Core
 

@@ -5,7 +5,7 @@
 //Modulos
 //Estilos
 import { useState } from 'react'
-import './ItemCount.css'
+
 //Componentes
 //Core
 
@@ -22,24 +22,24 @@ const ItemCount = (props) => {//Funcion constructora
     const [count, setCount] = useState(0)
   
     //Funciones de suma y de resta
-    const addOne = () =>{
-        if(count < props.stock){
-            setCount (count +1)
+    const addOne = () => {
+        if (count < props.stock) {
+            setCount(count + 1)
+            props.guardarCantidadAComprar(count)
         }
-       
     }
+
+       
+    
     const subOne = () => {
-        if (count >0) {
-            setCount (count -1) 
+        if (count > 0) {
+            setCount(count - 1)
+            props.guardarCantidadAComprar(count)
         }
-        
+
     }
 
     //Funcion agregar
-    const onAdd = () => {
-        console.log(count);
-    }
-
     return(
         
         <div>
@@ -48,14 +48,11 @@ const ItemCount = (props) => {//Funcion constructora
                 <p className="m-4">{count}</p>
                 <button className='btn btn-danger m-1 p-3' onClick={subOne}>-</button>
            </div>
-           <div className='d-flex justify-content-center m-2'>
-                <button className='btn btn-secondary ' onClick={onAdd}>On add</button>
-           </div>
         </div>
         
     )
 
-}
+    }
 
 /*#############################################
                  Exportacion

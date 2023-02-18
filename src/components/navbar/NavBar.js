@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 import CartWidget from '../cartWidget/CartWidget.js'
 
-import './NavBar.css'
+
 
 function NavBar (props){
     return(
@@ -30,7 +30,7 @@ function NavBar (props){
         <Link to="/categoria/electronics" className="nav-link" href="#s">Electronics<span className="sr-only"></span></Link>
       </li>
       <li className="nav-item m-3 p-3 ">
-       <CartWidget cantidad="3"/>
+       <Link to="/carrito"><CartWidget cantidad="3"/></Link>
       </li>
 
     </ul>

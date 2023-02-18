@@ -5,9 +5,9 @@
 //Modulos
 import { Link } from 'react-router-dom'
 //Estilos
-import './Item.css'
+
 //Componentes
-import ItemCount from '../itemCount/ItemCount'
+
 //Core
 
 /*#############################################
@@ -31,9 +31,6 @@ const Item = (props) => {//Funcion constructora
                 </div>
             </div>
             <Link to={`/producto/${id}`}>Ver Detalles</Link>
-            <div>
-             <ItemCount stock={10}/>
-            </div>
         </div>
         
     )

@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 //Estilos
-import './ItemCategoryContainer.css'
+
 //Componentes
 import ItemCategory from '../itemCategory/ItemCategory'
 //Core

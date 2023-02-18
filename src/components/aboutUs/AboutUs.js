@@ -4,7 +4,7 @@
 
 //Modulos
 //Estilos
-import './AboutUs.css'
+
 //Componentes
 //Core
 

@@ -5,8 +5,6 @@
 //Modulos
 import { useState, useEffect } from 'react'
 
-//Estilos
-import './ItemList.css'
 //Componentes
 import Item from '../item/Item'
 //Core

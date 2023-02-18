@@ -3,9 +3,12 @@
 ###############################################*/
 
 //Modulos
-//Estilos
-import './ItemDetail.css'
+
+import { useState } from 'react';
+import {useCartContext} from '../../context/CartContext';
+
 //Componentes
+import Card from 'react-bootstrap/Card';
 import ItemCount from '../itemCount/ItemCount'
 //Core
 
@@ -14,24 +17,49 @@ import ItemCount from '../itemCount/ItemCount'
 ###############################################*/
 const ItemDetail = (props) => {//Funcion constructora
 
-    const {title, category, description, price} = props.data
+    const {agregarAlCarrito} = useCartContext()
+
+    const [cantidadDeProductosAComprar, setCantidadDeProductosAComprar] = useState(0)
+
+    const {id, title, category, description, price} = props.data
+
+    const funcionDelHijoDeGuardarCantidad = (cantidadX) => {
+        setCantidadDeProductosAComprar(cantidadX)
+    }
+
+    const onAdd = () => {
+
+        if(cantidadDeProductosAComprar !== 0) {
+            const producto = {
+                id:id,
+                title:title,
+                category:category,
+                price:price,
+                count:cantidadDeProductosAComprar,
+                } 
+            
+               agregarAlCarrito(producto)
+        }else{
+            alert("No te olvides de añadir productos")
+        }
+        }
 
     return(
         
     <div className='m-3'>
-                    <div className='card m-3 border p-3 rounded col-3'>
-            <div className='flex'>
-                <div className=''>
-                <p>{category}</p>
-                <p>{title}</p>
-                <p>{description}</p>
-                <p>{price}</p>
-                </div>
-            </div>
-            <div>
-             <ItemCount stock={10}/>
-            </div>
-        </div>
+            <h1>DETALLE DEL PRODUCTO SELECCIONADO</h1>
+            <Card className='card-separated'>
+                <Card.Header as="h5">{category}</Card.Header>
+                <Card.Body>
+                    <Card.Title>{title} || Value ={price}</Card.Title>
+                    <Card.Text>
+                        {description}
+                    </Card.Text>
+
+                    <ItemCount stock={10} guardarCantidadAComprar={funcionDelHijoDeGuardarCantidad}/>
+                    <button onClick={onAdd} className="btn-buy">On Add</button>
+                </Card.Body>
+            </Card>
     </div>
         
     )

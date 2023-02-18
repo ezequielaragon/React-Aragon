@@ -4,7 +4,7 @@
 
 //Modulos
 //Estilos
-import './Home.css'
+
 //Componentes
 //Core
 
@@ -12,7 +12,6 @@ import './Home.css'
                  Logica
 ###############################################*/
 const Home = () => {//Funcion constructora
-
     return(
         
         <p >

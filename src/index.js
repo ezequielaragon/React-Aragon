@@ -12,13 +12,15 @@ import AboutUs from './components/aboutUs/AboutUs'
 import reportWebVitals from './reportWebVitals';
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer';
 import ItemCategoryContainer from './components/itemCategoryContainer/ItemCategoryContainer';
+import Cart from './components/cart/Cart';
+import CartProvider from './context/CartContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
 
     <BrowserRouter>
-
+    <CartProvider>
       <NavBar/>
       <Routes>
         <Route  exact path='/' element={<Home/>} />
@@ -26,10 +28,11 @@ root.render(
         <Route exact path='/productos' element={<Body/>} />
         <Route exact path='/producto/:productoId' element={<ItemDetailContainer/>} />
         <Route exact path='/categoria/:categoriaId' element={<ItemCategoryContainer/>} />
+        <Route exact path='/carrito' element={<Cart/>}/>
       </Routes>
 
       
-
+      </CartProvider>
     </BrowserRouter>
 
 
